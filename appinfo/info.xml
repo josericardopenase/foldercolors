@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<info>
+    <id>foldercolor</id>
+    <name>Cambiar Color de Carpetas</name>
+    <version>1.0.0</version>
+    <description>Agregar una opción para cambiar el color de las carpetas.</description>
+    <namespace>FolderColor</namespace>
+    <category>tools</category>
+    <dependencies>
+        <nextcloud min-version="23" />
+    </dependencies>
+    <php>
+        <classes>
+            <class>OCA\FolderColor\Controller\ColorController</class>
+        </classes>
+    </php>
+</info>

@@ -1,0 +1,47 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    z-index: 1000;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+}
+
+button {
+    margin: 5px;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+.modal-button-container{
+    display: flex;
+    width : 100%;
+    justify-content: center;
+}
+
+.input-list-element{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-form-title{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}

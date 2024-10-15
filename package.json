@@ -1,0 +1,30 @@
+{
+  "name": "foldercolor",
+  "version": "1.0.0",
+  "description": "Nextcloud app for changing folder colors",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.25.8",
+    "@babel/preset-env": "^7.25.8",
+    "@babel/preset-typescript": "^7.25.7",
+    "@types/micromodal": "^0.3.5",
+    "babel-loader": "^9.2.1",
+    "path-browserify": "^1.0.1",
+    "typescript": "^5.6.3",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@nextcloud/files": "^3.9.0",
+    "@nextcloud/vue": "^8.19.0",
+    "axios": "^1.7.7",
+    "ts-loader": "^9.5.1",
+    "vue": "^2.7.16"
+  }
+}
