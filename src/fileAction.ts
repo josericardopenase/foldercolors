@@ -13,9 +13,9 @@ export default function registerChangeFolderColorAction(modal : FormModal, api: 
             return true;
         },
         exec: async (file, view, dir) => {
+            if(file.mime !== "httpd/unix-directory") return false;
             modal.show()
             modal.handleSubmit(async (values) => {
-                if(file.mime !== "httpd/unix-directory") return false;
                 let result = values.color
                 if(!result) return false;
                 if(!file.fileid) return false;
