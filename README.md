@@ -70,7 +70,7 @@ If you are looking to contribute or test new features, follow these steps to set
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-repo/foldercolors.git
+    git clone https://github.com/josericardopenase/foldercolors.git
     cd foldercolors
     ```
 2. Install the required dependencies:
