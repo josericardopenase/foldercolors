@@ -1,6 +1,7 @@
 # FolderColors - Nextcloud App
-
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![Version](https://img.shields.io/badge/version-0.1-orange)](https://github.com/josericardopenase/foldercolors/releases)
+[![Test Status](https://img.shields.io/badge/tests-not%20tested-red)](#)
 
 ## Overview
 
@@ -100,4 +101,5 @@ This project is licensed under the terms of the [GNU AGPL v3.0 License](LICENSE)
 
 ## Support
 
-For support, you can create an issue on our [GitHub Issues]([https://github.com/your-repo/foldercolors/issues](https://github.com/josericardopenase/foldercolors/issues)) page.
+For support, you can create an issue on our [GitHub Issues](https://github.com/josericardopenase/foldercolors/issues) page.
+
