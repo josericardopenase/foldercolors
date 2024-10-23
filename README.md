@@ -9,6 +9,8 @@
 
 This app is compatible with Nextcloud 30.
 
+
+
 ## Features
 
 - Change the color of any folder with a simple click.
@@ -18,7 +20,9 @@ This app is compatible with Nextcloud 30.
 
 ## Screenshots
 
-<!-- Add screenshots here if available -->
+![Captura de pantalla 2024-10-23 a las 17 24 07](https://github.com/user-attachments/assets/c0369cc5-2819-4e0e-b04b-cbeba09cb814)
+![Captura de pantalla 2024-10-23 a las 17 23 56](https://github.com/user-attachments/assets/bd23d1db-376a-4291-9149-0a74219bc254)
+![Captura de pantalla 2024-10-23 a las 17 24 35](https://github.com/user-attachments/assets/3a23c524-3022-45fa-b643-8318d76df161)
 
 ## Requirements
 
