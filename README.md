@@ -100,4 +100,4 @@ This project is licensed under the terms of the [GNU AGPL v3.0 License](LICENSE)
 
 ## Support
 
-For support, you can create an issue on our [GitHub Issues](https://github.com/your-repo/foldercolors/issues) page.
+For support, you can create an issue on our [GitHub Issues]([https://github.com/your-repo/foldercolors/issues](https://github.com/josericardopenase/foldercolors/issues)) page.
