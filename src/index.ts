@@ -1,11 +1,6 @@
-import {
-    FileAction,
-    registerFileAction,
-} from '@nextcloud/files';
-import icon from './static/icon.svg';
-import FolderAPI from "./api";
-import registerChangeFolderColorAction from "./fileAction";
-import {ColorField, FormModal, TextField} from "./forms";
+import FolderAPI from './api';
+import registerChangeFolderColorAction from './fileAction';
+import { ColorField, FormModal } from './forms';
 
 
 

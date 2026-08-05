@@ -26,7 +26,7 @@ export default class FolderAPI{
     changeFolderColorInHtml(color : string, folderId : string) {
         const folderRow = document.querySelector(`tr[data-cy-files-list-row-fileid="${folderId}"]`);
         if (!folderRow) return;
-        const svgIcon = folderRow.querySelector('.folder-icon svg');
+        const svgIcon = folderRow.querySelector('.files-list__row-icon svg');
         if (svgIcon) svgIcon.setAttribute('fill', color);
     }
 }

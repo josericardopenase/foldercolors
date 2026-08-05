@@ -1,39 +1,36 @@
-import {FileAction, registerFileAction} from "@nextcloud/files";
-import icon from "./static/icon.svg";
-import FolderAPI from "./api";
-import {FormModal} from "./forms";
+import { FileAction, FileType, registerFileAction } from '@nextcloud/files';
+import icon from './static/icon.svg';
+import FolderAPI from './api';
+import { FormModal } from './forms';
 
-export default function registerChangeFolderColorAction(modal : FormModal, api: FolderAPI){
+function isFolder(file: { mime?: string; type?: FileType }): boolean {
+    return file.type === FileType.Folder || file.mime === 'httpd/unix-directory';
+}
+
+export default function registerChangeFolderColorAction(modal: FormModal, api: FolderAPI) {
     registerFileAction(new FileAction({
-        id: 'change-folder-color', // Identificador único de la acción
-        displayName: (files, view) => {
-            return 'Cambiar color'; // Nombre mostrado en el menú
-        },
-        enabled: (files, view) => {
-            return true;
-        },
-        exec: async (file, view, dir) => {
-            if(file.mime !== "httpd/unix-directory") return false;
-            modal.show()
+        id: 'change-folder-color',
+        displayName: () => 'Cambiar color',
+        enabled: (files) => files.length === 1 && isFolder(files[0]),
+        exec: async (file) => {
+            if (!isFolder(file)) {
+                return false;
+            }
+            modal.show();
             modal.handleSubmit(async (values) => {
-                let result = values.color
-                if(!result) return false;
-                if(!file.fileid) return false;
-                await api.saveFolderColorOf(file.fileid.toString(), result ?? "")
+                const result = values.color;
+                if (!result || !file.fileid) {
+                    return false;
+                }
+                await api.saveFolderColorOf(file.fileid.toString(), result);
                 return true;
-            })
+            });
 
-            return true;
+            return null;
         },
-        iconSvgInline: (files, view) => {
-            return icon;
-        },
+        iconSvgInline: () => icon,
         order: 200,
-        inline: (file, view) => {
-            return false;
-        },
-        title: (files, view) => {
-            return 'Cambiar color'; // Título como tooltip
-        },
+        inline: () => false,
+        title: () => 'Cambiar color',
     }));
 }
