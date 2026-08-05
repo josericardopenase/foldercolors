@@ -2,11 +2,12 @@
 <info>
     <id>foldercolor</id>
     <name>Cambiar Color de Carpetas</name>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <description>Agregar una opción para cambiar el color de las carpetas.</description>
     <namespace>FolderColor</namespace>
     <category>tools</category>
     <dependencies>
-        <nextcloud min-version="30" max-version="32"/>
+        <php min-version="8.2" max-version="8.5"/>
+        <nextcloud min-version="33" max-version="34"/>
     </dependencies>
 </info>

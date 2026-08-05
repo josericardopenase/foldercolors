@@ -1,36 +1,45 @@
-import { FileAction, FileType, registerFileAction } from '@nextcloud/files';
+import { FileType, registerFileAction, type IFileAction } from '@nextcloud/files';
 import icon from './static/icon.svg';
 import FolderAPI from './api';
 import { FormModal } from './forms';
 
-function isFolder(file: { mime?: string; type?: FileType }): boolean {
-    return file.type === FileType.Folder || file.mime === 'httpd/unix-directory';
+function isFolder(node: { type?: string; mime?: string }): boolean {
+	return node.type === FileType.Folder || node.mime === 'httpd/unix-directory';
+}
+
+function getNodeId(node: { id?: string; fileid?: number }): string | undefined {
+	return node.id ?? node.fileid?.toString();
 }
 
 export default function registerChangeFolderColorAction(modal: FormModal, api: FolderAPI) {
-    registerFileAction(new FileAction({
-        id: 'change-folder-color',
-        displayName: () => 'Cambiar color',
-        enabled: (files) => files.length === 1 && isFolder(files[0]),
-        exec: async (file) => {
-            if (!isFolder(file)) {
-                return false;
-            }
-            modal.show();
-            modal.handleSubmit(async (values) => {
-                const result = values.color;
-                if (!result || !file.fileid) {
-                    return false;
-                }
-                await api.saveFolderColorOf(file.fileid.toString(), result);
-                return true;
-            });
+	const action: IFileAction = {
+		id: 'change-folder-color',
+		displayName: () => 'Cambiar color',
+		enabled: ({ nodes }) => nodes.length === 1 && isFolder(nodes[0]),
+		exec: async ({ nodes }) => {
+			const node = nodes[0];
+			if (!isFolder(node)) {
+				return false;
+			}
 
-            return null;
-        },
-        iconSvgInline: () => icon,
-        order: 200,
-        inline: () => false,
-        title: () => 'Cambiar color',
-    }));
+			modal.show();
+			modal.handleSubmit(async (values) => {
+				const result = values.color;
+				const folderId = getNodeId(node);
+				if (!result || !folderId) {
+					return false;
+				}
+				await api.saveFolderColorOf(folderId, result);
+				return true;
+			});
+
+			return null;
+		},
+		iconSvgInline: () => icon,
+		order: 200,
+		inline: () => false,
+		title: () => 'Cambiar color',
+	};
+
+	registerFileAction(action);
 }

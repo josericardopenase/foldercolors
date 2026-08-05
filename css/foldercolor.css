@@ -45,3 +45,8 @@ button {
     font-size: 20px;
     margin-bottom: 10px;
 }
+
+/* Colorear solo el icono principal de carpeta, sin afectar overlays ni tamaño */
+tr[data-foldercolor] .files-list__row-icon > .material-design-icon:not(.files-list__row-icon-overlay) svg path {
+    fill: var(--foldercolor) !important;
+}

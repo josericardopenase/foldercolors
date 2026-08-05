@@ -23,10 +23,11 @@ export default class FolderAPI{
         if(color) this.changeFolderColorInHtml(color, folderId)
     }
 
-    changeFolderColorInHtml(color : string, folderId : string) {
-        const folderRow = document.querySelector(`tr[data-cy-files-list-row-fileid="${folderId}"]`);
+    changeFolderColorInHtml(color: string, folderId: string) {
+        const folderRow = document.querySelector(`tr[data-cy-files-list-row-fileid="${folderId}"]`) as HTMLElement | null;
         if (!folderRow) return;
-        const svgIcon = folderRow.querySelector('.files-list__row-icon svg');
-        if (svgIcon) svgIcon.setAttribute('fill', color);
+
+        folderRow.dataset.foldercolor = color;
+        folderRow.style.setProperty('--foldercolor', color);
     }
 }
